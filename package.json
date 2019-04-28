@@ -1,0 +1,41 @@
+{
+  "name": "geopedia-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "bootstrap": "^4.3.1",
+    "bulma": "^0.7.4",
+    "i": "^0.3.6",
+    "leaflet": "^1.4.0",
+    "npm": "^6.9.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-dom": "^16.8.6",
+    "react-dropdown": "^1.6.4",
+    "react-leaflet": "^2.2.1",
+    "react-leaflet-dialog": "^2.0.1",
+    "react-native-material-dropdown": "^0.11.1",
+    "react-scripts": "2.1.8",
+    "reactstrap": "^8.0.0",
+    "styled-components": "^4.2.0",
+    "styled-react-modal": "^1.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

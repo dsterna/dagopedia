@@ -1,0 +1,76 @@
+
+body {
+  min-height: 120%;
+  background-color: #FEFBF8;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 120%;
+}
+
+.textSection{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map {
+  z-index:1;
+  height: 400px;
+  width: 90%;
+  margin-top: auto;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.wikiTitle{
+  text-align: center;
+
+}
+
+.wikiTitle2{
+  text-align: center;
+  cursor: pointer;
+
+}
+b {
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 50px;
+}
+
+
+.previous {
+  float:left;
+  background-color: #FEFBF8;
+  color: black;
+}
+
+.next {
+  float:right;
+  background-color: #FEFBF8;
+  color: black;
+}
+.down {
+  text-align: center;
+  color: #0078a8;
+}
+
+
+
+
+
+
