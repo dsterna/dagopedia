@@ -1,58 +1,49 @@
-import React, { Component } from 'react';
-import Modal from "styled-react-modal";
-import styled from 'styled-components';
-import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
+import '../index.scss'
 
+import React, { Component } from 'react';
 
+import Dropdown from 'react-dropdown'
+import Modal from "styled-react-modal";
 
 const options = [
-    {code: "sv", text:'Svenska 🇸🇪', speachCode: "Swedish Male"},
-    {code: "en",text: 'English 🇬🇧', speachCode: "UK English Male"},
-    {code: "fi" ,text:'Soumi 🇫🇮', speachCode: "Finnish Male"},
-    {code: "fr", text: "Français 🇫🇷", speachCode: "French Female"},
-    {code: "es", text: "Español 🇪🇸", speachCode: "Spanish Male"},
-    {code: "da", text: "Dansk 🇩🇰", speachCode: "Danish Male"},
-    {code: "de", text: "Deutsch 🇩🇪", speachCode: "Deutsch Male"}
+    { code: "sv", text: 'Svenska 🇸🇪', speachCode: "Swedish Male", startText: "Starta" },
+    { code: "en", text: 'English 🇬🇧', speachCode: "UK English Male", startText: "Begin" },
+    { code: "fi", text: 'Soumi 🇫🇮', speachCode: "Finnish Male", startText: "Alkaa" },
+    { code: "fr", text: "Français 🇫🇷", speachCode: "French Female", startText: "Début" },
+    { code: "es", text: "Español 🇪🇸", speachCode: "Spanish Male", startText: "Comienzo" },
+    { code: "da", text: "Dansk 🇩🇰", speachCode: "Danish Male", startText: "Start" },
+    { code: "de", text: "Deutsch 🇩🇪", speachCode: "Deutsch Male", startText: "Starten" }
 ];
 
-
-const Title = styled.h1`
-  font-family: Monoton
-  color: #EDACB8;
-  font-size: 300%;
-  margin: 25px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #EDACB8;
-  display: inline-block;
-`;
-
 const StyledModal = Modal.styled`
+  text-align: left;
   z-index:2;
   width: 20rem;
-  height: 10rem;
+  height: 11rem;
   border-radius: 20px;
-  padding: 10px;   
+  padding: 40px;   
   background-color: white;
   opacity: ${props => props.opacity};
   transition: opacity ease 500ms;
   font-size:120%;
-  line-height: 26pt
+  line-height: 26pt;
+  @media (max-width: 768px) {
+    width: 20rem;
+    height: 11rem;
+    padding: 20px;   
+  }
 `;
-
-
 
 class HeadingMenu extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             isOpen: false,
             opacity: 0,
             language: props.language,
             sound: props.sound,
         };
-
         this.toggleModal = this.toggleModal.bind(this);
         this.toggleSound = this.toggleSound.bind(this);
         this.afterOpen = this.afterOpen.bind(this);
@@ -60,9 +51,9 @@ class HeadingMenu extends Component {
         this.onSelectChanged = this.onSelectChanged.bind(this);
     }
 
-    onSelectChanged(e){
+    onSelectChanged(e) {
         let language = options.find(y => y.text === e.value)
-        this.setState({language: language})
+        this.setState({ language: language })
         this.props.onChange(language);
     }
     toggleModal(e) {
@@ -71,7 +62,6 @@ class HeadingMenu extends Component {
 
     toggleSound(e) {
         this.setState({ sound: !this.state.sound });
-
         this.props.onChange()
 
     }
@@ -99,19 +89,14 @@ class HeadingMenu extends Component {
                     onEscapeKeydown={this.toggleModal}
                     opacity={this.state.opacity}
                     backgroundProps={{ opacity: this.state.opacity }}>
-                   <strong> Settings </strong> <br/>
-                    {this.state.sound ?   <span  onClick={this.toggleSound} role="img" aria-label="soundOn"> Toggle sound 🔊</span>  :   <span onClick={this.toggleSound}role="img" aria-label="soundOff"> Toggle sound 🔇</span>}
+                    <strong> Settings </strong> <br />
+                    {this.state.sound ? <span style={{ cursor: "pointer" }} onClick={this.toggleSound} role="img" aria-label="soundOn"> Toggle sound 🔊</span> : <span style={{ cursor: "pointer" }} onClick={this.toggleSound} role="img" aria-label="soundOff"> Toggle sound 🔇</span>}
                     <section>Language:</section>
-                    <Dropdown role="img" value={this.state.language.text} options={options.map(y => y.text)} onChange={this.onSelectChanged}   />
+                    <Dropdown  role="img" value={this.state.language.text} options={options.map(y => y.text)} onChange={this.onSelectChanged} />
                 </StyledModal>
-                <Title onClick={this.toggleModal}>Dagopedia</Title>
+                <h1 className="customTitle" onClick={this.toggleModal}>Dagopedia </h1>
             </div>
         );
     }
 }
-
-export default styled(HeadingMenu)`
-  width: 100vw;
-  height: 20vh;
-  text-align: center;
-`;
+export default HeadingMenu;
