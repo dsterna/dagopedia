@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://dsterna.github.io/dagopedia/docs/precache-manifest.a2dd8a744d6f9dda5d2bc91e2b1087fd.js"
+  "https://dsterna.github.io/dagopedia/precache-manifest.144e70459ca0f6e88e564ab7a3bce027.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("https://dsterna.github.io/dagopedia/docs/index.html", {
+workbox.routing.registerNavigationRoute("https://dsterna.github.io/dagopedia/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
